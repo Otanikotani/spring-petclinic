@@ -17,8 +17,7 @@ pipeline {
     post {
         always {
             echo 'Pipeline has ended'
-            archiveArtifacts '**/build/reports/tests/**'
-            junit('**/test-results/**/*.xml')
+            junit('**/surefire-reports/**/*.xml')
         }
         success {
             echo 'The pipeline was successful'
